@@ -439,6 +439,20 @@ footer img {
 .contenido a:hover {
     color: var(--color-secundario);
 }
+/* El header sube y baja dos veces para invitar a deslizar */
+@keyframes empujoncito {
+  0%, 50%, 100% { transform: translateY(0); }
+  25%, 75%      { transform: translateY(-44px); }
+}
+
+header {
+  animation: empujoncito 1.4s ease-in-out 1.2s 1;
+}
+
+/* Quien tenga desactivadas las animaciones en el celu no lo ve */
+@media (prefers-reduced-motion: reduce) {
+  header { animation: none; }
+}
 
 @media (max-width: 600px) {
     header {
